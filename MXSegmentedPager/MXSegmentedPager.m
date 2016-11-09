@@ -84,7 +84,7 @@
 }
 
 - (void)scrollToTopAnimated:(BOOL)animated {
-    [_contentView setContentOffset:CGPointMake(0, -self.contentView.parallaxHeader.height)
+    [_contentView setContentOffset:CGPointMake(0, self.contentView.parallaxHeader.height)
                           animated:animated];
 }
 
