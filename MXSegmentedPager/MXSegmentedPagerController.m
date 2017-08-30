@@ -1,6 +1,6 @@
 // MXSegmentedPagerController.m
 //
-// Copyright (c) 2016 Maxime Epain
+// Copyright (c) 2017 Maxime Epain
 //
 // Permission is hereby granted, free of charge, to any person obtaining a copy
 // of this software and associated documentation files (the "Software"), to deal
@@ -73,14 +73,7 @@
 - (UIView *)segmentedPager:(MXSegmentedPager *)segmentedPager viewForPageAtIndex:(NSInteger)index {
     
     UIViewController *viewController = [self segmentedPager:segmentedPager viewControllerForPageAtIndex:index];
-    
-    if (viewController) {
-        [self addChildViewController:viewController];
-        [viewController didMoveToParentViewController:self];
-
-        return viewController.view;
-    }
-    return nil;
+    return viewController.view;
 }
 
 - (UIViewController *)segmentedPager:(MXSegmentedPager *)segmentedPager viewControllerForPageAtIndex:(NSInteger)index {
@@ -114,6 +107,5 @@
 - (void)setPageViewController:(__kindof UIViewController *)pageViewController atIndex:(NSInteger)index {
     self.pageViewControllers[@(index)] = pageViewController;
 }
-
 
 @end
